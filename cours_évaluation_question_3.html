@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>les grands maîtres du karaté</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script>
+		var mesphotos = ['img1.jpg','img2.jpg','img3.jpg'];
+		var image_en_cours = 0;
+		function suivante () {
+			image_en_cours = image_en_cours + 1;
+			if (image_en_cours == mesphotos.length) {
+				image_en_cours = 0;
+			}
+			document.getElementById('ecran').src = mesphotos[image_en_cours];
+		}
+		function precedente () {
+			image_en_cours = image_en_cours - 1;
+			if (image_en_cours < 0) {
+				image_en_cours = mesphotos.length-1;
+			}
+			document.getElementById('ecran').src = mesphotos[image_en_cours];
+		}
+	</script>
+</head>
+
+<body>
+
+	<h1>les grands maîtres du karaté</h1>
+
+	<h2>Diaporama</h2>
+
+	<div class="illustration">
+	<img id="ecran" src="img2.jpg" alt="Miyagi" height="200" />
+	</div>
+	
+	<button type="button" class="btn btn-primary" onclick="precedente();"><span class="glyphicon glyphicon-chevron-left"></span>image précédente</button>
+	<button type="button" class="btn btn-primary" onclick="suivante();"><span class="glyphicon glyphicon-chevron-right"></span>image suivante</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	</body>
+</html>
